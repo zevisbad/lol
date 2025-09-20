@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SH Joiner</title>
+</head>
+<body>
+  <h1>Join Latest Server</h1>
+  <p>
+    <a id="joinLink" href="#" target="_blank">Click to Join Server</a>
+  </p>
+
+  <script>
+    async function fetchJobId() {
+      // Fetch latest jobid from backend JSON
+      let res = await fetch("jobid.json?nocache=" + Date.now());
+      let data = await res.json();
+      let jobid = data.jobId;
+
+      // Fixed placeId
+      let placeId = "109983668079237";
+
+      // Construct Roblox join link
+      let link = `roblox://placeId=${placeId}&gameInstanceId=${jobid}`;
+
+      // Update link
+      document.getElementById("joinLink").href = link;
+    }
+
+    fetchJobId();
+    setInterval(fetchJobId, 10000); // refresh every 10s
+  </script>
+</body>
+</html>
