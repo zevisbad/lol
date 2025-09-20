@@ -1,3 +1,7 @@
 {
-  "jobId": "initial"
+  "servers": [
+    {"jobId":"abc123", "timestamp":"2025-09-20T13:00:00Z"},
+    {"jobId":"def456", "timestamp":"2025-09-20T13:05:00Z"},
+    {"jobId":"ghi789", "timestamp":"2025-09-20T13:10:00Z"}
+  ]
 }
